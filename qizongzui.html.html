@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>七宗罪 × 七美德｜55 题潜意识自测</title>
+<link rel="preconnect" href="https://miaoda.feishu.cn">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@600;700;900&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Cinzel:wght@600;700&amp;display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23201a33'/%3E%3Cpath d='M32 12c6 8 16 14 16 26a16 16 0 0 1-32 0c0-12 10-18 16-26z' fill='%23f0b8d0'/%3E%3Cpath d='M32 16c-4 5-10 9-10 17a10 10 0 0 0 20 0c0-8-6-12-10-17z' fill='%23201a33'/%3E%3Ccircle cx='47' cy='18' r='3' fill='%23c9a86a'/%3E%3C/svg%3E">
+<style>
+/* ===== 设计 token：暗黑哥特 × 可爱 ===== */
+:root{
+  --bg1:#171021; --bg2:#2a1b3a; --bg3:#3a2350;
+  --ink:#f3e8f3; --muted:#cdbfd6; --soft:#a98fa8;
+  --pink:#f0b8d0; --pinkDeep:#e08fb0; --lav:#b9a0e0; --lavDeep:#8f6fc0;
+  --cream:#f6ecf0; --gold:#c9a86a; --red:#c96a7e; --teal:#9ad5d0;
+  --card:rgba(44,30,64,.72); --card2:rgba(56,38,82,.62);
+  --line:rgba(240,184,208,.28); --lineSoft:rgba(185,160,224,.22);
+  --shadow:0 18px 50px rgba(10,4,18,.55);
+  --r-lg:26px; --r-md:20px; --r-sm:14px;
+  --ff-sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  --ff-serif:"Noto Serif SC","Songti SC","SimSun",serif;
+  --ff-cinzel:"Cinzel","Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--ff-sans);color:var(--ink);line-height:1.62;
+  background:radial-gradient(120% 90% at 50% -8%,var(--bg3) 0%,var(--bg2) 46%,var(--bg1) 100%) fixed;
+  min-height:100vh;overflow-x:hidden;
+}
+/* 暗星空背景 */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(1.5px 1.5px at 12% 22%,rgba(240,184,208,.5),transparent 100%),
+    radial-gradient(1.5px 1.5px at 68% 12%,rgba(201,168,106,.5),transparent 100%),
+    radial-gradient(1.5px 1.5px at 84% 44%,rgba(185,160,224,.5),transparent 100%),
+    radial-gradient(1.5px 1.5px at 28% 64%,rgba(240,184,208,.4),transparent 100%),
+    radial-gradient(1.5px 1.5px at 52% 82%,rgba(201,168,106,.4),transparent 100%),
+    radial-gradient(1.5px 1.5px at 92% 78%,rgba(185,160,224,.45),transparent 100%),
+    radial-gradient(2px 2px at 8% 88%,rgba(240,184,208,.5),transparent 100%),
+    radial-gradient(1.5px 1.5px at 42% 8%,rgba(201,168,106,.45),transparent 100%);
+  opacity:.8;
+}
+#app{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:28px 18px 60px}
+.view{display:none}
+.view.active{display:block;animation:fadeUp .5s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* 哥特尖拱壳 */
+.arch{
+  position:relative;background:var(--card);border:1px solid var(--lineSoft);
+  border-radius:var(--r-lg);padding:34px 26px;
+  box-shadow:var(--shadow);backdrop-filter:blur(6px);
+}
+.arch::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:118px;height:66px;background:rgba(240,184,208,.12);
+  border-radius:118px 118px 0 0;border:1px solid var(--line);border-bottom:none;
+  pointer-events:none;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 16px;border-radius:999px;font-size:13px;letter-spacing:.08em;
+  border:1px solid var(--line);color:var(--pink);background:rgba(240,184,208,.08);
+}
+.badge .dot{width:7px;height:7px;border-radius:50%;background:var(--pink);box-shadow:0 0 10px var(--pink)}
+
+/* 封面 */
+#view-home{text-align:center;padding-top:26px}
+.hero-title{
+  font-family:var(--ff-serif);font-weight:900;font-size:clamp(34px,9vw,56px);
+  line-height:1.18;color:var(--ink);
+  text-shadow:0 0 26px rgba(240,184,208,.4);
+}
+.hero-title .amp{color:var(--pink);font-family:var(--ff-cinzel);font-weight:700;padding:0 .1em}
+.hero-sub{
+  font-family:var(--ff-cinzel);letter-spacing:.22em;color:var(--gold);
+  font-size:13px;margin-top:10px;text-transform:uppercase;
+}
+.decoRow{display:flex;justify-content:center;gap:14px;margin:20px 0;color:var(--lav);font-size:18px}
+.decoRow svg{width:22px;height:22px;fill:currentColor}
+
+.intro-card{text-align:left;margin-top:8px}
+.intro-card p{font-size:15px;color:var(--muted);margin:12px 0}
+.intro-card b{color:var(--pink)}
+.hint-box{
+  margin:18px 0 4px;padding:16px 18px;border-radius:var(--r-md);
+  background:var(--card2);border:1px solid var(--lineSoft);
+}
+.hint-box .h-t{font-weight:700;color:var(--cream);font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.hint-box .h-t svg{width:16px;height:16px;fill:var(--gold);flex:none}
+.hint-box .row{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:14px;color:var(--muted)}
+.hint-box .key{
+  font-family:var(--ff-cinzel);color:var(--gold);font-weight:700;width:14px;text-align:center;flex:none;
+}
+.hint-box .pts{font-size:12px;color:var(--soft)}
+.rule-box{margin-top:14px}
+.rule-box .r-t{font-weight:700;color:var(--cream);font-size:15px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.rule-box .r-t svg{width:16px;height:16px;fill:var(--pink);flex:none}
+.rule-box .chip{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);padding:7px 0;border-bottom:1px dashed var(--lineSoft)}
+.rule-box .chip:last-child{border-bottom:none}
+.rule-box .chip b{color:var(--lav)}
+
+.btn{
+  display:block;width:100%;border:none;cursor:pointer;
+  font-family:var(--ff-sans);font-weight:700;font-size:18px;
+  padding:16px;border-radius:999px;color:#241531;
+  background:linear-gradient(120deg,var(--pink),var(--lav));
+  box-shadow:0 10px 30px rgba(240,184,208,.35);
+  transition:transform .15s,box-shadow .15s;margin-top:26px;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(240,184,208,.5)}
+.btn:active{transform:none}
+
+/* 测试视图 */
+.q-top{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.q-dim{
+  font-size:13px;letter-spacing:.1em;color:var(--lav);font-weight:700;
+  padding:5px 14px;border:1px solid var(--line);border-radius:999px;white-space:nowrap;
+}
+.q-count{font-size:13px;color:var(--soft);margin-left:auto;font-family:var(--ff-cinzel)}
+.q-progress{height:8px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin:14px 0 26px}
+.q-progress i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--pink),var(--lav));transition:width .3s}
+.q-stem{
+  font-family:var(--ff-serif);font-weight:700;font-size:clamp(19px,4.6vw,24px);
+  line-height:1.5;color:var(--cream);margin-bottom:26px;
+}
+.opt{
+  display:flex;align-items:center;gap:14px;width:100%;text-align:left;
+  background:var(--card);border:1px solid var(--lineSoft);border-radius:var(--r-md);
+  padding:15px 16px;margin-bottom:12px;cursor:pointer;color:var(--muted);font-size:15px;
+  transition:border-color .15s,background .15s,transform .1s;
+}
+.opt:hover{border-color:var(--pink);transform:translateX(3px)}
+.opt.sel{border-color:var(--pink);background:rgba(240,184,208,.12);color:var(--cream)}
+.opt .letter{
+  flex:none;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--ff-cinzel);font-weight:700;font-size:15px;color:var(--pink);
+  border:1px solid var(--line);
+}
+.opt.sel .letter{background:linear-gradient(120deg,var(--pink),var(--lav));color:#241531;border-color:transparent}
+.opt .txt{flex:1}
+.opt .pick{font-size:12px;color:var(--gold);opacity:0}
+.opt.sel .pick{opacity:1}
+.q-nav{display:flex;gap:12px;margin-top:6px}
+.q-nav .btn{flex:1;margin-top:0;font-size:15px;padding:13px}
+.q-nav .btn.ghost{background:transparent;color:var(--pink);border:1px solid var(--line);box-shadow:none}
+.q-nav .btn.ghost:hover{border-color:var(--pink)}
+.q-nav .btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+
+.note{font-size:12px;color:var(--soft);text-align:center;margin-top:22px}
+
+/* ===== 结果视图 ===== */
+.result-head{text-align:center;margin-bottom:20px}
+.result-head h2{font-family:var(--ff-serif);font-weight:900;font-size:clamp(30px,8vw,46px);color:var(--ink);text-shadow:0 0 24px rgba(240,184,208,.35)}
+.result-head p{font-size:13px;color:var(--muted);margin-top:6px}
+.dominant{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:18px}
+@media(min-width:640px){.dominant{grid-template-columns:1fr 1fr}}
+.dom-card{position:relative;border-radius:var(--r-lg);padding:24px 20px;overflow:hidden;border:1px solid var(--lineSoft)}
+.dom-card.sin{background:linear-gradient(150deg,rgba(150,70,100,.55),rgba(52,28,60,.7))}
+.dom-card.vir{background:linear-gradient(150deg,rgba(70,100,140,.5),rgba(48,34,76,.7))}
+.dom-card .d-tag{font-size:11px;letter-spacing:.16em;color:var(--lav);font-family:var(--ff-cinzel)}
+.dom-card.sin .d-tag{color:var(--pink)}
+.dom-card .d-name{font-family:var(--ff-serif);font-weight:900;font-size:30px;color:var(--cream);margin:6px 0 4px}
+.dom-card .d-sub{font-size:14px;color:var(--muted);line-height:1.78}
+.dom-card .d-score{position:absolute;right:18px;top:20px;font-family:var(--ff-cinzel);color:var(--gold);font-size:13px}
+.dom-card .d-bar{height:6px;border-radius:999px;background:rgba(255,255,255,.12);margin-top:12px;overflow:hidden}
+.dom-card .d-bar i{display:block;height:100%;border-radius:999px}
+.chart-block{margin:4px 0 20px}
+.chart-block .c-t{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--cream);font-size:15px;margin-bottom:12px}
+.chart-block .c-t svg{width:16px;height:16px;fill:var(--gold);flex:none}
+.chart-wrap{width:100%;height:260px}
+@media(min-width:640px){.chart-wrap{height:300px}}
+.analysis{margin-top:8px}
+.analysis .a-card{background:var(--card2);border:1px solid var(--lineSoft);border-radius:var(--r-md);padding:20px;margin-bottom:16px}
+.analysis .a-h{display:flex;align-items:center;gap:12px;font-family:var(--ff-serif);font-weight:900;font-size:21px;color:var(--cream);margin-bottom:14px}
+.analysis .a-h .ico{width:40px;height:40px;border-radius:12px;flex:none;display:flex;align-items:center;justify-content:center;font-size:21px;color:#241531}
+.analysis .seg{margin:12px 0}
+.analysis .seg .s-t{font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--gold);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.analysis .seg .s-t::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);flex:none}
+.analysis .seg p{font-size:14.5px;color:var(--muted);line-height:1.78}
+.analysis .seg p b{color:var(--pink)}
+.seg-grid{display:grid;grid-template-columns:1fr;gap:4px 22px}
+@media(min-width:640px){.seg-grid{grid-template-columns:1fr 1fr}}
+.all-scores{margin-top:8px}
+.all-scores .l-t{font-weight:700;color:var(--cream);font-size:15px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.all-scores .l-t svg{width:16px;height:16px;fill:var(--lav);flex:none}
+.all-scores .chip{display:flex;justify-content:space-between;align-items:center;padding:8px 2px;border-bottom:1px dashed var(--lineSoft);font-size:14px;color:var(--muted)}
+.all-scores .chip:last-child{border-bottom:none}
+.all-scores .chip .name{display:flex;align-items:center;gap:9px}
+.all-scores .chip .sq{width:10px;height:10px;border-radius:3px;flex:none}
+.all-scores .chip .num{font-family:var(--ff-cinzel);color:var(--gold)}
+.all-scores .chip .tier{font-size:12px;color:var(--lav);letter-spacing:.02em}
+.all-scores .profile-note{font-size:13.5px;color:var(--muted);line-height:1.7;margin:12px 0 16px;padding:13px 15px;background:rgba(185,160,224,.1);border:1px solid var(--lineSoft);border-radius:var(--r-sm)}
+.all-scores .profile-note b{color:var(--pink)}
+.restart-btn{background:transparent;color:var(--pink);border:1px solid var(--line);box-shadow:none}
+.restart-btn:hover{border-color:var(--pink);box-shadow:0 8px 22px rgba(240,184,208,.2)}
+.loading{text-align:center;padding:60px 0;color:var(--soft);font-size:14px}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- ===== 视图：封面 ===== -->
+  <section id="view-home" class="view active">
+    <div class="arch" style="padding:40px 26px">
+      <div class="badge"><span class="dot"></span>潜意识自测</div>
+      <h1 class="hero-title" style="margin-top:18px">七宗罪<span class="amp">×</span>七美德</h1>
+      <div class="hero-sub">56 Questions · Self Test</div>
+      <div class="decoRow">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9.3-9C1 8 3 5 6 5c2 0 3 1 6 4 3-3 4-4 6-4 3 0 5 3 3.3 7-2.3 4.6-9.3 9-9.3 9z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/></svg>
+      </div>
+
+      <div class="intro-card">
+        <p><b>不是宗教审判！</b>每个人心底都同时藏着欲望与温柔，14 种特质占比各不相同。</p>
+        <p>凭第一感觉选择，不要反复权衡，最后算出你的<b>主导原罪</b>&amp;<b>主导美德</b>。</p>
+      </div>
+
+      <div class="hint-box">
+        <div class="h-t"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.4 1.2 4.5 3 5.7V17h8v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 0 0-7-7zM9 19h6v2H9z"/></svg>选项统一 · 凭第一感觉</div>
+        <div class="row"><span class="key">A</span>非常符合</div>
+        <div class="row"><span class="key">B</span>比较符合</div>
+        <div class="row"><span class="key">C</span>中立</div>
+        <div class="row"><span class="key">D</span>不太符合</div>
+        <div class="row"><span class="key">E</span>完全不符合</div>
+      </div>
+
+      <div class="rule-box">
+        <div class="r-t"><svg viewBox="0 0 24 24"><path d="M4 6l8 4 8-4-8-4zM4 10l8 4 8-4M4 14l8 4 8-4"/></svg>题量</div>
+        <div class="chip"><span>共 56 题 · 7×7 原罪 + 7 美德</span><b>约 6 分钟</b></div>
+      </div>
+
+      <button class="btn" id="btnStart">开始测试</button>
+    </div>
+  </section>
+
+  <!-- ===== 视图：测试 ===== -->
+  <section id="view-quiz" class="view">
+    <div class="arch">
+      <div class="q-top">
+        <span class="q-dim" id="qDim">傲慢</span>
+        <span class="q-count" id="qCount">1 / 55</span>
+      </div>
+      <div class="q-progress"><i id="qProg" style="width:0%"></i></div>
+      <div class="q-stem" id="qStem">题目内容</div>
+      <div id="qOpts"></div>
+      <div class="q-nav">
+        <button class="btn ghost" id="btnPrev">上一题</button>
+        <button class="btn" id="btnNext">下一题</button>
+      </div>
+      <div class="note" id="qNote">凭第一直觉作答，不要反复权衡</div>
+    </div>
+  </section>
+
+  <!-- ===== 视图：结果（由 JS 填充） ===== -->
+  <section id="view-result" class="view">
+    <div id="resultMount"></div>
+  </section>
+
+</div>
+<script src="https://fastly.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<script>
+const DIMS = {
+  pride:{name:'傲慢',type:'sin',color:'#c96a7e',icon:'傲'},
+  envy:{name:'嫉妒',type:'sin',color:'#b9a0e0',icon:'嫉'},
+  wrath:{name:'暴怒',type:'sin',color:'#e08f6a',icon:'怒'},
+  sloth:{name:'懒惰',type:'sin',color:'#9ad5d0',icon:'懒'},
+  greed:{name:'贪婪',type:'sin',color:'#c9a86a',icon:'贪'},
+  gluttony:{name:'暴食',type:'sin',color:'#e0b0c0',icon:'饕'},
+  lust:{name:'色欲',type:'sin',color:'#e08fb0',icon:'欲'},
+  humility:{name:'谦卑',type:'virtue',color:'#a5c8f0',icon:'谦'},
+  forgiveness:{name:'宽容',type:'virtue',color:'#9ad5d0',icon:'宽'},
+  patience:{name:'耐心',type:'virtue',color:'#d9c5a0',icon:'耐'},
+  diligence:{name:'勤勉',type:'virtue',color:'#e0d0a0',icon:'勤'},
+  generosity:{name:'慷慨',type:'virtue',color:'#d0a0e0',icon:'慷'},
+  temperance:{name:'节制',type:'virtue',color:'#9fd0b0',icon:'节'},
+  chastity:{name:'贞洁',type:'virtue',color:'#c0a8e0',icon:'贞'}
+};
+const ORDER = ['pride','envy','wrath','sloth','greed','gluttony','lust','humility','forgiveness','patience','diligence','generosity','temperance','chastity'];
+const QUESTIONS = [
+  {dim:'pride',text:'我很难接受别人否定我的想法，下意识想反驳证明自己'},
+  {dim:'pride',text:'我常常觉得自己的眼光、能力优于身边大部分人'},
+  {dim:'pride',text:'被夸奖时内心会默认：我本来就值得这些赞美'},
+  {dim:'pride',text:'犯错之后，比起认错，我更在意会不会损害我的形象'},
+  {dim:'pride',text:'我不喜欢听从别人安排，本能反感被指挥'},
+  {dim:'pride',text:'对比同龄人，我不甘心做一个普通、不起眼的人'},
+  {dim:'pride',text:'别人请教我，我内心会有优越感'},
+  {dim:'envy',text:'看到朋友拿到我梦寐以求的机会，心里会发酸'},
+  {dim:'envy',text:'别人拥有我没有的东西，我会忍不住暗自对比'},
+  {dim:'envy',text:'当熟人过得比我顺利，很难发自内心祝福对方'},
+  {dim:'envy',text:'看到别人晒成绩、礼物、好运，容易觉得不公平'},
+  {dim:'envy',text:'我会悄悄留意，不想身边人超过我'},
+  {dim:'envy',text:'同样努力，别人收获更多时，我容易心生不甘'},
+  {dim:'envy',text:'别人的闪光点，会让我隐隐有压力'},
+  {dim:'wrath',text:'事情不顺心意，很容易瞬间上火、情绪上头'},
+  {dim:'wrath',text:'被冒犯之后，我会记很久，想要讨回公道'},
+  {dim:'wrath',text:'排队、被人敷衍、被打断，很容易激怒我'},
+  {dim:'wrath',text:'争吵时，控制不住说出伤人的话'},
+  {dim:'wrath',text:'生气的时候，只想立刻发泄，很难冷静'},
+  {dim:'wrath',text:'别人反复犯同样的错，我会很不耐烦'},
+  {dim:'wrath',text:'受委屈第一反应是反击，而不是释怀'},
+  {dim:'sloth',text:'明明知道该做事，还是想拖延、摆烂'},
+  {dim:'sloth',text:'没有外界催促，我很难主动推进长期计划'},
+  {dim:'sloth',text:'很多想变好的目标，最后都不了了之'},
+  {dim:'sloth',text:'能省事就省事，不愿意额外付出精力'},
+  {dim:'sloth',text:'遇到难题，第一想法是逃避而不是解决'},
+  {dim:'sloth',text:'经常精神倦怠，懒得维系关系、打理生活'},
+  {dim:'sloth',text:'习惯等别人带动我，很少主动行动'},
+  {dim:'greed',text:'想要的东西很多，得到之后很快又想要更多'},
+  {dim:'greed',text:'看到福利、优惠、资源，总想尽可能多拿'},
+  {dim:'greed',text:'很难满足当下拥有的，总觉得还不够'},
+  {dim:'greed',text:'有利可图的时候，会优先考虑自己收益最大化'},
+  {dim:'greed',text:'羡慕收入更高、拥有更多资源的人'},
+  {dim:'greed',text:'就算已经够用，依旧舍不得分享、让出利益'},
+  {dim:'greed',text:'机会出现，我会想全部抓住，不愿取舍'},
+  {dim:'gluttony',text:'开心或者难过，会靠吃喝、刷视频疯狂补偿自己'},
+  {dim:'gluttony',text:'享受一件事的时候，容易没有节制停不下来'},
+  {dim:'gluttony',text:'明明已经饱和，依旧想要继续享受快感'},
+  {dim:'gluttony',text:'压力大时，靠放纵娱乐麻痹自己'},
+  {dim:'gluttony',text:'很容易沉溺短期快乐，忽略长远代价'},
+  {dim:'gluttony',text:'购物、追剧、美食，经常一不小心就过量'},
+  {dim:'gluttony',text:'克制享乐对我来说，是一件很难的事'},
+  {dim:'lust',text:'很容易被有吸引力的人牵动情绪'},
+  {dim:'lust',text:'新鲜感对我的吸引力很强'},
+  {dim:'lust',text:'就算已有伴侣，也会对他人产生心动'},
+  {dim:'lust',text:'我很渴望亲密、被偏爱带来的刺激感'},
+  {dim:'lust',text:'容易被外表、氛围感快速打动'},
+  {dim:'lust',text:'暧昧拉扯带来的情绪波动，会让我上瘾'},
+  {dim:'lust',text:'边界感薄弱，容易和别人产生越界互动'},
+  {dim:'humility',text:'我可以坦然接纳自己的不足，认可别人的闪光点'},
+  {dim:'forgiveness',text:'我可以真心祝福他人的好运，不心生芥蒂'},
+  {dim:'patience',text:'遇到糟心事、等待、被辜负，我可以稳住情绪不发火'},
+  {dim:'diligence',text:'不需要人督促，我会主动坚持完成该做的事'},
+  {dim:'generosity',text:'在力所能及的范围里，我愿意分享资源、帮助他人'},
+  {dim:'temperance',text:'我懂得适可而止，不会沉溺享乐、放纵欲望'},
+  {dim:'chastity',text:'我重视关系边界，尊重承诺，不会随意越界'}
+];
+</script>
+<script>
+const ANALYSIS = {
+  pride:{
+    lead:'你渴望被看见、被认可，不愿低头，把自我价值看得极重。被否定时，你下意识先护住自己的形象，而不是先听对方在说什么；被人挑战时，哪怕心里已经动摇，嘴上也不肯认输。你在意别人怎么看你，越是亲近的人，你越怕在他们面前显得"不够"。你的骄傲像一件铠甲，保护了自尊，也悄悄挡住了那些真正想走近你的人。',
+    why:'你有强烈的自我主张，习惯在人群中证明自己比别人强；被否定时，第一反应是捍卫形象，而不是吸收意见。你的能力常常是真的好，但恰恰让"承认局限"变得很难。',
+    dark:'傲慢会悄悄筑起一座墙。你越坚持"我没错"，越难听到真话；身边的人开始顺着你说话，而不是说该说的话。你在高处待久了，会孤独。',
+    trans:'傲慢的背面是自信。试着把"证明我厉害"换成"我想做得更好"，把别人的否定当成信息，而不是攻击。真正的强大，是敢承认"我不知道"。'
+  },
+  envy:{
+    lead:'你在意比较，别人的拥有会随时拨动你的情绪。看到朋友拿到你想要的，你嘴上说着恭喜，心里却悄悄发酸；别人晒出的好日子，会像镜子一样照出你自己的不满足。你不是心眼小，而是对自己期待太高，又怕自己落在后面。嫉妒在提醒你：你心里其实藏着一个很想被满足的渴望。',
+    why:'你对他人的进度和收获极其敏感，容易用"别人有什么"来丈量自己缺什么。那不是恶，而是你内心对自己期待很高，又怕自己落在后面。',
+    dark:'嫉妒会让你看不见自己已有的东西，专注放大别人的光，不断消耗自己的能量；严重时还会让你疏远那些本可并肩的朋友。',
+    trans:'试着把"他为什么有"换成"我想要什么"。嫉妒的信号，其实是内心未被满足的渴望。把它们变成行动清单，你会从观众变成选手。'
+  },
+  wrath:{
+    lead:'你的情绪反应快而猛，受到冒犯时身体比理智先动。被敷衍、被打断、被不公平对待，你会瞬间上火，话赶话冲到嘴边，伤人之后自己又后悔。你心里有一套"应该怎样"的剧本，现实一偏离，火就上来了。你不是脾气坏，而是对"被尊重"这件事特别敏感，只是表达的方式太过锋利。',
+    why:'你心里有一套关于"应该怎样"的期待，当现实或他人打破它，你会立刻上火。你对不公和不敬特别敏感，所以容易瞬间被点燃。',
+    dark:'暴怒最大的代价，是你说的那句伤人的话——它在情绪退潮后依然会刺伤关系，让你后悔；长期压不住火，也会让你自己疲惫、失去可信度。',
+    trans:'火气是信息，不是答案。给自己一个情绪缓冲：先深呼吸六秒再回应，把"我要反击"换成"我想弄清楚发生了什么"。愤怒可以成为保护边界的能量，而不是摧毁关系的武器。'
+  },
+  sloth:{
+    lead:'你很清楚该做什么，却常常卡在"想"和"做"之间。目标定得远，当下又累，你就先放着，一放就是很久，最后用"算了"安慰自己。你不是懒，而是启动那一下太费劲——一旦开始，你其实能做得很好。问题从来不是你没有能力，而是你总在等一个"准备好的时刻"。',
+    why:'你不是不想要，而是启动太难。长期目标太远、当下太累，你就选择先放着，结果越放越难捡起来，最后用"算了"说服自己。',
+    dark:'懒惰最隐蔽的代价，不是没做成，而是你慢慢开始不相信自己能做成。拖延和摆烂会悄悄侵蚀自信，让你对生活失去掌控感。',
+    trans:'把目标拆到小到不可能失败的一步——"打开文档写一行"也算。大脑需要即时反馈，奖励自己完成的每一小步，让行动先于感觉。'
+  },
+  greed:{
+    lead:'你永远觉得"还可以再多一点"，获得带来的满足转瞬即逝。得到想要的，短暂的开心过后，你又会盯着下一个目标；看到福利和机会，总想尽可能多抓住一些。你不是贪心，而是安全感藏在"拥有更多"里，总觉得不够，就永远停不下来。其实你缺的往往不是更多，而是"已经足够"的确认。',
+    why:'你对资源和机会有很强的占有欲，总怕错过、怕不够。安全感藏在"拥有更多"里，所以很难在"已经足够"时停下来。',
+    dark:'贪婪会让你的注意力永远指向下一个目标，忘记停下享用已有的；它也会让你在分享和合作时显得计较，把关系变成交易。',
+    trans:'练习"够了"这个念头——盘点你已经拥有的，明确什么是真正需要的。分享一点你擅长的东西，你会发现在给予里也有一种富足。'
+  },
+  gluttony:{
+    lead:'你用享受和刺激来安抚情绪，一上头就很难刹车。开心时想加倍奖励自己，难过时想用快感淹没自己——吃、刷、买、追，都是为了短暂离开当下的感觉。它不是单指吃，而是所有让你"停不下来"的享乐。你真正想要的，不是那口甜，而是被安慰、被填满的感觉。',
+    why:'开心时你想加倍奖励自己，难过时你想用快感淹没自己。吃、刷、买、追，都是为了短暂离开当下的感觉。它不单指吃，是一切让你"停不下来"的享乐。',
+    dark:'这种补偿会让你一次次依赖外部刺激平复内心，却始终填不满那个空洞；过量之后往往是更深的空虚和自责，形成循环。',
+    trans:'停下来问自己：这一刻我想要的是快感，还是安慰？试着用一次散步、和朋友说说话、写下感受来替代放纵。允许自己快乐，但别让快乐成为唯一出口。'
+  },
+  lust:{
+    lead:'你容易被吸引、被新鲜感牵动，渴望强烈的心动和亲密刺激。暧昧的拉扯、被偏爱的电流感、靠近时的脸红心跳，都会让你上瘾。你享受"被选中"的感觉，却也因为边界感薄弱，容易在不知不觉中越界。你不是花心，而是太渴望那种被强烈需要、强烈心动的感觉。',
+    why:'你对情感的浓度和心跳的感觉有很高的需求，暧昧、偏爱、被靠近都会让你上瘾。你享受"被选中"的电流感，也容易因为边界感薄弱而越界。',
+    dark:'对新鲜感的执念，会让你在稳定关系里不断寻找刺激，反而难以真正安放一段关系；模糊的边界也可能在不知不觉中伤害自己和他人。',
+    trans:'区分"心动"和"决定"。心动只是情绪波动，决定才指向承诺。把对刺激的渴望，转化为对一段关系做深度、持续的投入——深水区也有让人上瘾的东西。'
+  },
+  humility:{
+    lead:'你敢于正视自己的不足，也能真心欣赏别人。你不需要用贬低别人来抬高自己，能在"我很普通"和"我很有价值"之间安稳地相处。别人夸你，你不会飘；别人指出你的问题，你听得进去，也不觉得被冒犯。这份谦卑，让你始终听得进真话、交得到真朋友。',
+    why:'你的自信不需要通过贬低别人来获得，你能在"我很普通"和"我很有价值"之间安稳地相处。',
+    keep:'谦卑让你始终听得进真话、交得到真朋友。只要别把谦卑变成自我否定，它就是让你不断成长的底座。'
+  },
+  forgiveness:{
+    lead:'你愿意放下芥蒂，真心祝福别人的好运。别人过得好，你不会拿它来反衬自己的失落；别人做错事，你也愿意给一次机会。你能把"别人过得好"和"我自己的价值"分开，所以活得比别人轻。宽容不是软弱，是你选择不让别人的事，消耗自己的心力。',
+    why:'你能把"别人过得好"和"我自己的价值"分开，不拿他人的顺遂来惩罚自己。',
+    keep:'宽容是关系的润滑剂，也是让你轻装上阵的能力。守住底线的宽容，不是软弱，是选择。'
+  },
+  patience:{
+    lead:'面对等待、糟心和不顺，你能稳住情绪，不轻易发火。排队再久，你也耐得住；被辜负、被拖延，你也能让自己缓一缓再回应。你理解事情有它自己的节奏，不急着用情绪去撞。这份耐心，让你在漫长的关系和生活里，不容易内耗，也不容易半途而废。',
+    why:'你理解事情有它自己的节奏，不急着用情绪回应，给现实和自己都留出余地。',
+    keep:'耐心让你在长跑里不内耗、不半途而废。别把它变成压抑，学着在等待时也说清自己的需要。'
+  },
+  diligence:{
+    lead:'不需要别人催促，你会主动坚持做完该做的事。你习惯把事情做到底，答应的事很少掉链子，行动力强、靠谱，是那种"说到做到"的人。你把完成当成对自己的交代，不靠监督也能推进。这份勤勉是你的底气，只是别忘了，你也该允许自己歇一歇。',
+    why:'你把"完成"当成对自己的交代，行动力强、可靠，是那种"说到做到"的人。',
+    keep:'勤勉是你的底气。留意别把自我价值全绑在"做成了多少"上，允许自己也有歇脚和休息的时候。'
+  },
+  generosity:{
+    lead:'在力所能及的范围内，你愿意分享资源、帮助别人。有好东西你会想着分给身边的人，别人开口求助你也很难拒绝。你相信给予不会让自己变少，乐于成人之美，也因此在关系里攒下了许多温暖。只是要学着分辨"帮助"和"被索取"，别让善意耗尽你自己。',
+    why:'你相信给予不会让自己变少，乐于成人之美，也因此在关系里攒下温暖。',
+    keep:'慷慨让你被需要、被信任。同时学着分辨"帮助"与"被索取"，别让善意变成耗尽自己的无底洞。'
+  },
+  temperance:{
+    lead:'你懂得适可而止，不会沉溺享乐、放纵欲望。再喜欢的东西，你也知道什么时候该停；满足之后，你能忍住不去透支。你对"度"有天然的觉察，能在快乐和克制之间找到平衡。这份节制让你活得清醒而有掌控感，只是别把它活成压抑，偶尔也该允许自己尽兴一次。',
+    why:'你对"度"有天然的觉察，能在满足与克制之间找到平衡，不让快感支配自己。',
+    keep:'节制让你清醒而有掌控感。别把节制活成压抑，在自律之外也给快乐留一块不设防的地方。'
+  },
+  chastity:{
+    lead:'你重视关系边界，尊重承诺，不会轻易越界。你清楚什么该做、什么不该做，对感情有清晰的边界感，让人觉得踏实、安心。你把"专一"和"信任"看得很重，不靠暧昧和试探来获取安全感。这份贞洁，让你在关系里站得稳、走得远，只要别把边界活成冷漠就好。',
+    why:'你把"专一"和"信任"看得很重，对感情有清晰的边界感，让人觉得安心。',
+    keep:'贞洁让你在关系里站得稳、走得远。只要别把边界活成冷漠，它就是你最珍贵的承诺感。'
+  }
+};
+</script>
+<script>
+(function(){
+  'use strict';
+  var LETTERS=['A','B','C','D','E'];
+  var OPT_TEXT=['非常符合','比较符合','中立','不太符合','完全不符合'];
+  var POINTS={A:5,B:4,C:3,D:2,E:1};
+  var current=0;
+  var answers=new Array(QUESTIONS.length).fill(null);
+
+  function $(id){return document.getElementById(id);}
+  function show(id){var v=document.querySelectorAll('.view');for(var i=0;i<v.length;i++)v[i].classList.remove('active');$(id).classList.add('active');}
+
+  /* ---------- 测试视图 ---------- */
+  function renderQuestion(){
+    var q=QUESTIONS[current], dim=DIMS[q.dim];
+    $('qDim').textContent=dim.name;
+    $('qDim').style.color=dim.color;
+    $('qCount').textContent=(current+1)+' / '+QUESTIONS.length;
+    $('qProg').style.width=((current+1)/QUESTIONS.length*100)+'%';
+    $('qStem').textContent=q.text;
+    var opts=$('qOpts');opts.innerHTML='';
+    for(var i=0;i<5;i++){
+      var div=document.createElement('div');
+      div.className='opt'+(answers[current]===LETTERS[i]?' sel':'');
+      div.setAttribute('role','radio');div.setAttribute('aria-checked',answers[current]===LETTERS[i]);
+      div.innerHTML='<span class="letter">'+LETTERS[i]+'</span><span class="txt">'+OPT_TEXT[i]+'</span><span class="pick">已选 ✓</span>';
+      div.onclick=(function(idx){return function(){answers[current]=LETTERS[idx];renderQuestion();};})(i);
+      opts.appendChild(div);
+    }
+    $('btnPrev').disabled=(current===0);
+    var next=$('btnNext');
+    if(current===QUESTIONS.length-1){next.textContent='查看结果';}else{next.textContent='下一题';}
+    window.scrollTo(0,0);
+  }
+  function showQuiz(){show('view-quiz');renderQuestion();}
+
+  /* ---------- 计分 ---------- */
+  function compute(){
+    var s={};ORDER.forEach(function(k){s[k]=0;});
+    QUESTIONS.forEach(function(q,i){s[q.dim]+=POINTS[answers[i]]||0;});
+    return s;
+  }
+
+  /* 结果统一为 10 分制：原罪满分 35，美德满分 5 */
+  function to10(v,type){return type==='sin'?Math.round(v/35*10*10)/10:Math.round(v/5*10*10)/10;}
+  function tierLabel(v,type){
+    if(v>=8)return type==='sin'?'欲望强':'美德突出';
+    if(v>=6)return type==='sin'?'欲望较明显':'美德良好';
+    if(v>=4)return '程度适中';
+    return type==='sin'?'倾向较弱':'有待培养';
+  }
+
+  /* ---------- 结果视图 ---------- */
+  function pickDominant(scores,type){
+    var cand=ORDER.filter(function(k){return DIMS[k].type===type;});
+    var best=cand[0],bestVal=scores[best];
+    for(var i=1;i<cand.length;i++){if(scores[cand[i]]>bestVal){best=cand[i];bestVal=scores[cand[i]];}}
+    return {key:best,val:bestVal,pool:cand};
+  }
+  function pct(v,max,min){min=min||0;return Math.round((v-min)/(max-min)*100);}
+
+  function makeBar(elId,cats,vals,colors){
+    var el=$(elId);var chart=echarts.init(el);
+    chart.setOption({
+      grid:{left:110,right:30,top:10,bottom:10,containLabel:true},
+      tooltip:{trigger:'axis',axisPointer:{type:'shadow'},confine:true,backgroundColor:'rgba(30,20,44,.94)',borderColor:'rgba(240,184,208,.3)',textStyle:{color:'#f3e8f3',fontSize:12}},
+      xAxis:{type:'value',min:0,max:10,splitLine:{lineStyle:{color:'rgba(255,255,255,.08)'}},axisLabel:{color:'#a98fa8',fontFamily:'monospace'}},
+      yAxis:{type:'category',data:cats,axisLine:{show:false},axisTick:{show:false},axisLabel:{color:'#f3e8f3',fontSize:13}},
+      series:[{type:'bar',data:vals.map(function(v,i){return {value:v,itemStyle:{color:colors[i],borderRadius:[0,6,6,0]}};}),barWidth:16}]
+    });
+    return chart;
+  }
+
+  function renderResult(){
+    show('view-result');
+    var scores=compute();
+    var sin=pickDominant(scores,'sin');
+    var vir=pickDominant(scores,'virtue');
+    var mount=$('resultMount');
+    var sinD=DIMS[sin.key],virD=DIMS[vir.key];
+    var sinA=ANALYSIS[sin.key],virA=ANALYSIS[vir.key];
+    var sinMax=sin.pool.reduce(function(m,k){return Math.max(m,scores[k]);},0);
+    var virMax=vir.pool.reduce(function(m,k){return Math.max(m,scores[k]);},0);
+    var html='';
+    html+='<div class="result-head"><div class="badge"><span class="dot"></span>测试结果</div><h2>你的灵魂剖面</h2><p>主导原罪 × 主导美德 · 已为你展开一线细节</p></div>';
+    var sin10=to10(sin.val,'sin'), vir10=to10(vir.val,'virtue');
+    html+='<div class="dominant">';
+    html+='  <div class="dom-card sin"><span class="d-tag">DOMINANT SIN · 主导原罪</span><span class="d-score">'+sin10+' / 10</span><div class="d-name">'+sinD.name+'</div><div class="d-sub">'+sinA.lead+'</div><div class="d-bar"><i style="width:'+(sin10*10)+'%;background:linear-gradient(90deg,'+sinD.color+',#f0b8d0)"></i></div></div>';
+    html+='  <div class="dom-card vir"><span class="d-tag">DOMINANT VIRTUE · 主导美德</span><span class="d-score">'+vir10+' / 10</span><div class="d-name">'+virD.name+'</div><div class="d-sub">'+virA.lead+'</div><div class="d-bar"><i style="width:'+(vir10*10)+'%;background:linear-gradient(90deg,'+virD.color+',#9ad5d0)"></i></div></div>';
+    html+='</div>';
+
+    // 原罪条
+    var sins=sin.pool.slice();sins.sort(function(a,b){return scores[b]-scores[a];});
+    html+='<div class="chart-block"><div class="c-t"><svg viewBox="0 0 24 24"><path d="M4 6l8 4 8-4-8-4zM4 10l8 4 8-4M4 14l8 4 8-4"/></svg>七原罪强度（分数越高，该项欲望越强）</div><div class="chart-wrap" id="chartSins"></div></div>';
+    // 美德条
+    var vrs=vir.pool.slice();vrs.sort(function(a,b){return scores[b]-scores[a];});
+    html+='<div class="chart-block"><div class="c-t"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9.3-9C1 8 3 5 6 5c2 0 3 1 6 4 3-3 4-4 6-4 3 0 5 3 3.3 7-2.3 4.6-9.3 9-9.3 9z"/></svg>七美德强度（分数越高，该项美德越强）</div><div class="chart-wrap" id="chartVirtues"></div></div>';
+
+    // 一线分析
+    html+='<div class="analysis">';
+    html+='  <div class="a-card"><div class="a-h"><span class="ico" style="background:'+sinD.color+'">'+sinD.icon+'</span>你的主导原罪 · '+sinD.name+'</div>';
+    html+='    <div class="seg"><div class="s-t">为什么会是你</div><p>'+sinA.why+'</p></div>';
+    html+='    <div class="seg"><div class="s-t">它的暗面代价</div><p>'+sinA.dark+'</p></div>';
+    html+='    <div class="seg"><div class="s-t">健康转化</div><p>'+sinA.trans+'</p></div></div>';
+    html+='  <div class="a-card"><div class="a-h"><span class="ico" style="background:'+virD.color+'">'+virD.icon+'</span>你的主导美德 · '+virD.name+'</div>';
+    html+='    <div class="seg"><div class="s-t">为什么会是你</div><p>'+virA.why+'</p></div>';
+    html+='    <div class="seg"><div class="s-t">它的价值与提醒</div><p>'+virA.keep+'</p></div></div>';
+    html+='</div>';
+
+    // 全维度
+    html+='<div class="all-scores arch" style="margin-top:8px;padding:22px 22px"><div class="l-t"><svg viewBox="0 0 24 24"><path d="M4 6l8 4 8-4-8-4zM4 10l8 4 8-4M4 14l8 4 8-4"/></svg>14 种特质完整剖析</div>';
+    html+='<div class="profile-note">综合你的作答，最突出的是主导原罪「'+sinD.name+'」（'+tierLabel(sin10,'sin')+'）与主导美德「'+virD.name+'」（'+tierLabel(vir10,'virtue')+'）。欲望与温柔在你身上不是对立，而是同一种生命力的两面。</div>';
+    ORDER.forEach(function(k){
+      var d=DIMS[k], v=to10(scores[k],d.type), tier=tierLabel(v,d.type);
+      html+='<div class="chip"><span class="name"><span class="sq" style="background:'+d.color+'"></span>'+d.name+'</span><span class="tier">'+tier+'</span><span class="num">'+v+'分</span></div>';
+    });
+    html+='</div>';
+    html+='<div class="note" style="margin-top:16px">趣味潜意识测试 · 仅作自我觉察参考，不算人格定论</div>';
+    html+='<button class="btn restart-btn" id="btnRestart">重新测试</button>';
+    mount.innerHTML=html;
+    $('btnRestart').onclick=function(){location.hash='#home';};
+    makeBar('chartSins',sins.map(function(k){return DIMS[k].name;}),sins.map(function(k){return to10(scores[k],'sin');}),sins.map(function(k){return DIMS[k].color;}));
+    makeBar('chartVirtues',vrs.map(function(k){return DIMS[k].name;}),vrs.map(function(k){return to10(scores[k],'virtue');}),vrs.map(function(k){return DIMS[k].color;}));
+  }
+
+  /* ---------- 路由 ---------- */
+  function route(){
+    var h=location.hash.replace('#','');
+    if(h==='quiz'){showQuiz();}
+    else if(h==='result'){
+      var done=answers.every(function(a){return a!==null;});
+      if(!done){var un=QUESTIONS.filter(function(q,i){return answers[i]===null;}).length;if(!confirm('还有 '+un+' 题未作答，仍要查看结果吗？')){location.hash='#quiz';return;}}
+      renderResult();
+    }
+    else{show('view-home');window.scrollTo(0,0);}
+  }
+  window.addEventListener('hashchange',route);
+
+  $('btnStart').onclick=function(){location.hash='#quiz';};
+  $('btnPrev').onclick=function(){if(current>0){current--;renderQuestion();}};
+  $('btnNext').onclick=function(){
+    if(answers[current]===null){alert('请先选择当前题目的答案');return;}
+    if(current<QUESTIONS.length-1){current++;renderQuestion();}
+    else{location.hash='#result';}
+  };
+  if(!location.hash){location.hash='#home';}else{route();}
+})();
+</script>
+</body>
+</html>
